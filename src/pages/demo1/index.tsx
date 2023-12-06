@@ -2,6 +2,7 @@ import { useEffect } from 'react';
 import { Text, View } from '@tarojs/components';
 import { Button } from '@antmjs/vantui';
 
+import { useRouter } from '@/hooks';
 import { add } from '@/service/demo';
 
 definePageConfig({
@@ -9,6 +10,9 @@ definePageConfig({
 });
 
 export default function FontSize() {
+  const { pageParams } = useRouter();
+  console.log('👻 ~ pageParams:', pageParams);
+
   useEffect(() => {
     add().then((res) => {
       console.log(res);
