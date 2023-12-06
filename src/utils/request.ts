@@ -68,10 +68,9 @@ function createRequest(service: AxiosInstance) {
         'Content-Type': 'application/json',
       },
       timeout: 5000,
-      baseURL: '/',
+      baseURL: process.env.TARO_APP_API,
       data: {},
     };
-    console.log('👻 ~ defaultConfig:', defaultConfig);
     // 将默认配置 defaultConfig 和传入的自定义配置 config 进行合并成为 mergeConfig
     const mergeConfig = merge(defaultConfig, config);
     return service(mergeConfig);

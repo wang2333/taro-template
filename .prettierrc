@@ -5,6 +5,7 @@
   "semi": true,
   "trailingComma": "all",
   "proseWrap": "never",
+  "endOfLine": "auto",
   "overrides": [{ "files": ".prettierrc", "options": { "parser": "json" } }],
   "importOrder": [
     "^(react/(.*)$)|^(react$)",

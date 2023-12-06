@@ -1,8 +1,8 @@
 {
-  "miniprogramRoot": "dist/",
+  "miniprogramRoot": "dist/weapp/",
   "projectname": "taro-react-starter",
   "description": "taro-react-starter",
-  "appid": "wx3ac3f653002c2ab6",
+  "appid": "touristappid",
   "setting": {
     "urlCheck": true,
     "es6": false,
@@ -17,8 +17,8 @@
     }
   },
   "compileType": "miniprogram",
-  "libVersion": "3.2.1",
-  "srcMiniprogramRoot": "dist/",
+  "libVersion": "2.32.2",
+  "srcMiniprogramRoot": "dist/weapp/",
   "packOptions": {
     "ignore": [],
     "include": []

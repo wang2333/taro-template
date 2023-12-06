@@ -20,7 +20,7 @@ const config = {
     828: 1.81 / 2,
   },
   sourceRoot: 'src',
-  outputRoot: process.env.TARO_ENV === 'h5' ? 'build' : process.env.TARO_ENV,
+  outputRoot: `dist/${process.env.TARO_ENV}`,
   alias: {
     '@': npath.resolve(process.cwd(), 'src'),
   },
@@ -36,21 +36,21 @@ const config = {
   },
   mini: {
     webpackChain(chain) {
-      miniChain(chain);
       chain.plugin('unocss').use(UnoCSS());
+      miniChain(chain);
     },
-    lessLoaderOption: {
-      lessOptions: {
-        modifyVars: {
-          hack: `true; @import "${npath.join(
-            process.cwd(),
-            'src/styles/index.less',
-          )}";`,
-        },
-      },
-      // 适用于全局引入样式
-      // additionalData: "@import '~/src/styles/index.less';",
-    },
+    // lessLoaderOption: {
+    //   lessOptions: {
+    //     modifyVars: {
+    //       hack: `true; @import "${npath.join(
+    //         process.cwd(),
+    //         'src/styles/index.less',
+    //       )}";`,
+    //     },
+    //   },
+    //   // 适用于全局引入样式
+    //   additionalData: "@import '~/src/styles/index.less';",
+    // },
     postcss: {
       pxtransform: {
         enable: true,
@@ -83,17 +83,17 @@ const config = {
       }
     },
     esnextModules: [/@antmjs[\\/]vantui/],
-    lessLoaderOption: {
-      lessOptions: {
-        modifyVars: {
-          // 或者可以通过 less 文件覆盖（文件路径为绝对路径）
-          hack: `true; @import "${npath.join(
-            process.cwd(),
-            'src/styles/index.less',
-          )}";`,
-        },
-      },
-    },
+    // lessLoaderOption: {
+    //   lessOptions: {
+    //     modifyVars: {
+    //       // 或者可以通过 less 文件覆盖（文件路径为绝对路径）
+    //       hack: `true; @import "${npath.join(
+    //         process.cwd(),
+    //         'src/styles/index.less',
+    //       )}";`,
+    //     },
+    //   },
+    // },
     router: {
       mode: 'browser',
     },
