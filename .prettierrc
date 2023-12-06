@@ -1,0 +1,25 @@
+{
+  "$schema": "https://json.schemastore.org/prettierrc",
+  "printWidth": 80,
+  "singleQuote": true,
+  "semi": true,
+  "trailingComma": "all",
+  "proseWrap": "never",
+  "overrides": [{ "files": ".prettierrc", "options": { "parser": "json" } }],
+  "importOrder": [
+    "^(react/(.*)$)|^(react$)",
+    "^@umijs/(.*)$",
+    "^@ant-design/(.*)$",
+    "^(antd/(.*)$)|^(antd$)",
+    "",
+    "<THIRD_PARTY_MODULES>",
+    "^[@/]",
+    "^[./]"
+  ],
+  "importOrderParserPlugins": ["typescript", "jsx", "decorators-legacy"],
+
+  "plugins": [
+    "@ianvs/prettier-plugin-sort-imports",
+    "prettier-plugin-packagejson"
+  ]
+}
