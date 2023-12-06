@@ -8,9 +8,8 @@
   "overrides": [{ "files": ".prettierrc", "options": { "parser": "json" } }],
   "importOrder": [
     "^(react/(.*)$)|^(react$)",
-    "^@umijs/(.*)$",
-    "^@ant-design/(.*)$",
-    "^(antd/(.*)$)|^(antd$)",
+    "^@tarojs/(.*)$",
+    "^@antmjs/(.*)$",
     "",
     "<THIRD_PARTY_MODULES>",
     "^[@/]",

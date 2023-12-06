@@ -1,8 +1,8 @@
 import { useEffect } from 'react';
+import { Text, View } from '@tarojs/components';
+import { Button } from '@antmjs/vantui';
 
 import { add } from '@/service/demo';
-import { Button } from '@antmjs/vantui';
-import { Text, View } from '@tarojs/components';
 
 definePageConfig({
   navigationBarTitleText: '0000',
