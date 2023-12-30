@@ -1,5 +1,4 @@
 import { Button, View } from '@tarojs/components';
-import Taro from '@tarojs/taro';
 
 import { useRouter } from '@/hooks';
 
@@ -8,14 +7,10 @@ definePageConfig({
 });
 
 export default function Index() {
-  const { goTo } = useRouter();
+  const { switchTab } = useRouter();
   const handleGo = () => {
-    goTo({
+    switchTab({
       url: '/pages/demo1/index',
-      params: {
-        a: '1',
-        b: '2',
-      },
     });
   };
   return (

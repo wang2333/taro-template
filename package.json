@@ -20,7 +20,6 @@
   "dependencies": {
     "@antmjs/mini-fix": "^2.3.24",
     "@antmjs/vantui": "^3.2.2",
-    "@babel/runtime": "^7.23.5",
     "@tarojs/components": "3.6.20",
     "@tarojs/helper": "3.6.20",
     "@tarojs/plugin-framework-react": "3.6.20",
@@ -50,6 +49,7 @@
     "@antmjs/plugin-h5-fix": "^2.3.24",
     "@antmjs/plugin-mini-fix": "^2.3.24",
     "@babel/core": "^7.23.5",
+    "@babel/runtime": "^7.23.5",
     "@ianvs/prettier-plugin-sort-imports": "^4.1.1",
     "@tarojs/cli": "3.6.20",
     "@tarojs/webpack5-runner": "3.6.20",

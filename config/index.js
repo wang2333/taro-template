@@ -1,6 +1,3 @@
-/* eslint-disable import/no-commonjs */
-/* eslint-disable @typescript-eslint/no-var-requires */
-const UnoCSS = require('unocss/webpack').default;
 const npath = require('path');
 const pkg = require('../package.json');
 const miniChain = require('./webpack/miniChain');
@@ -36,21 +33,8 @@ const config = {
   },
   mini: {
     webpackChain(chain) {
-      chain.plugin('unocss').use(UnoCSS());
       miniChain(chain);
     },
-    // lessLoaderOption: {
-    //   lessOptions: {
-    //     modifyVars: {
-    //       hack: `true; @import "${npath.join(
-    //         process.cwd(),
-    //         'src/styles/index.less',
-    //       )}";`,
-    //     },
-    //   },
-    //   // 适用于全局引入样式
-    //   additionalData: "@import '~/src/styles/index.less';",
-    // },
     postcss: {
       pxtransform: {
         enable: true,
@@ -76,24 +60,12 @@ const config = {
   },
   h5: {
     webpackChain(chain) {
-      chain.plugin('unocss').use(UnoCSS());
       h5Chain(chain);
       if (process.env.NODE_ENV === 'production') {
         chain.performance.maxEntrypointSize(1000000).maxAssetSize(512000);
       }
     },
     esnextModules: [/@antmjs[\\/]vantui/],
-    // lessLoaderOption: {
-    //   lessOptions: {
-    //     modifyVars: {
-    //       // 或者可以通过 less 文件覆盖（文件路径为绝对路径）
-    //       hack: `true; @import "${npath.join(
-    //         process.cwd(),
-    //         'src/styles/index.less',
-    //       )}";`,
-    //     },
-    //   },
-    // },
     router: {
       mode: 'browser',
     },

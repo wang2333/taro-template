@@ -11,9 +11,6 @@ dependencies:
   '@antmjs/vantui':
     specifier: ^3.2.2
     version: 3.2.2(react-dom@18.2.0)(react@18.2.0)
-  '@babel/runtime':
-    specifier: ^7.23.5
-    version: 7.23.5
   '@tarojs/components':
     specifier: 3.6.20
     version: 3.6.20(@types/react@18.2.42)(postcss@8.4.32)(react@18.2.0)
@@ -95,6 +92,9 @@ devDependencies:
     specifier: ^2.3.24
     version: 2.3.24
   '@babel/core':
+    specifier: ^7.23.5
+    version: 7.23.5
+  '@babel/runtime':
     specifier: ^7.23.5
     version: 7.23.5
   '@ianvs/prettier-plugin-sort-imports':
@@ -13002,7 +13002,7 @@ packages:
     name: brace-expansion
     version: 2.0.1
     dependencies:
-      balanced-match: 1.0.2
+      balanced-match: registry.npmmirror.com/balanced-match@1.0.2
     dev: true
 
   registry.npmmirror.com/color-convert@2.0.1:

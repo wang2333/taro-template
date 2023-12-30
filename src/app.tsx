@@ -1,10 +1,8 @@
+import { PropsWithChildren } from 'react';
 import { useLaunch } from '@tarojs/taro';
 
 import 'uno.css';
-
-import { PropsWithChildren } from 'react';
-
-import './app.scss';
+import './app.css';
 
 function App({ children }: PropsWithChildren) {
   useLaunch(() => {

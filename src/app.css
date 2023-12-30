@@ -5,6 +5,7 @@
   justify-content: center !important;
 }
 
-:root {
-  // --button-small-height: 20;
+/* 定义项目的全局样式 */
+page {
+  --primary-color: 255, 0, 0;
 }

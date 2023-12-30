@@ -6,7 +6,7 @@ import { useRouter } from '@/hooks';
 import { add } from '@/service/demo';
 
 definePageConfig({
-  navigationBarTitleText: '0000',
+  navigationBarTitleText: 'demo1',
 });
 
 export default function FontSize() {
@@ -24,7 +24,7 @@ export default function FontSize() {
       <Button type="danger" size="small">
         主要按钮
       </Button>
-      <Text className="p-8">000</Text>
+      <Text className="p-8 text-primary">000</Text>
       <View className="text-2xl text-center my-3">font-size</View>
       <View className="text-xs">text-xs</View>
       <View className="text-sm">text-sm</View>

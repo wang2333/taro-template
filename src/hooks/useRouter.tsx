@@ -4,7 +4,7 @@ import Taro from '@tarojs/taro';
 type ParamsType = Record<string, string>;
 type RouteInfo = {
   url: string;
-  params: ParamsType;
+  params?: ParamsType;
 };
 
 export const useRouter = () => {
@@ -16,10 +16,15 @@ export const useRouter = () => {
   }, []);
 
   const goTo = ({ url, params }: RouteInfo) => {
-    const p = Object.keys(params).map((key) => `${key}=${params[key]}`);
-    Taro.navigateTo({
-      url: `${url}?${p.join('&')}`,
-    });
+    if (params) {
+      const p = Object.keys(params).map((key) => `${key}=${params[key]}`);
+      url = `${url}?${p.join('&')}`;
+    }
+    Taro.navigateTo({ url });
+  };
+
+  const switchTab = ({ url }: RouteInfo) => {
+    Taro.switchTab({ url });
   };
 
   const getPageParams = () => {
@@ -28,6 +33,7 @@ export const useRouter = () => {
 
   return {
     goTo,
+    switchTab,
     pageParams,
   };
 };

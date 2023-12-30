@@ -34,6 +34,8 @@ module.exports = {
     'prettier/prettier': 'error',
     'react/jsx-uses-react': 'off',
     'react/react-in-jsx-scope': 'off',
+    'import/no-commonjs': 'off',
+    '@typescript-eslint/no-var-requires': 'off',
     'no-console': process.env.NODE_ENV === 'production' ? 'warn' : 'off',
     'no-debugger': process.env.NODE_ENV === 'production' ? 'warn' : 'off',
   },
