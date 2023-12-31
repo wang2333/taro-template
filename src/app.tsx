@@ -3,6 +3,7 @@ import { useLaunch } from '@tarojs/taro';
 
 import 'uno.css';
 import './app.css';
+import './custom-variables.scss';
 
 function App({ children }: PropsWithChildren) {
   useLaunch(() => {

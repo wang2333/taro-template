@@ -1,21 +1,19 @@
 import { useEffect, useState } from 'react';
 import Taro from '@tarojs/taro';
 
-type ParamsType = Record<string, string>;
-type RouteInfo = {
-  url: string;
-  params?: ParamsType;
-};
+type ParamsType = Partial<Record<string, string>>;
 
 export const useRouter = () => {
-  const [pageParams, setPageParams] = useState<RouteInfo['params']>({});
+  const [pageParams, setPageParams] = useState<ParamsType>({});
 
   useEffect(() => {
     const params = getPageParams();
-    setPageParams(params as ParamsType);
+    if (params) {
+      setPageParams(params);
+    }
   }, []);
 
-  const goTo = ({ url, params }: RouteInfo) => {
+  const goTo = (url: string, params?: ParamsType) => {
     if (params) {
       const p = Object.keys(params).map((key) => `${key}=${params[key]}`);
       url = `${url}?${p.join('&')}`;
@@ -23,12 +21,15 @@ export const useRouter = () => {
     Taro.navigateTo({ url });
   };
 
-  const switchTab = ({ url }: RouteInfo) => {
+  const switchTab = (url: string) => {
     Taro.switchTab({ url });
   };
 
   const getPageParams = () => {
-    return Taro.getCurrentInstance().router?.params;
+    const router = Taro.getCurrentInstance().router;
+    if (router?.params) {
+      return router.params;
+    }
   };
 
   return {

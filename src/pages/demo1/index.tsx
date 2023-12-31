@@ -1,17 +1,17 @@
 import { useEffect } from 'react';
 import { Text, View } from '@tarojs/components';
-import { Button } from '@antmjs/vantui';
 
+import { AtButton, AtNavBar } from 'taro-ui';
 import { useRouter } from '@/hooks';
 import { add } from '@/service/demo';
 
 definePageConfig({
   navigationBarTitleText: 'demo1',
+  navigationBarBackgroundColor: '#f00',
 });
 
-export default function FontSize() {
-  const { pageParams } = useRouter();
-  console.log('👻 ~ pageParams:', pageParams);
+export default function Demo1() {
+  const { goTo } = useRouter();
 
   useEffect(() => {
     add().then((res) => {
@@ -20,10 +20,16 @@ export default function FontSize() {
   }, []);
   return (
     <View className="p-4">
+      <AtNavBar color="#0" leftText="返回">
+        <View>Taro UI</View>
+      </AtNavBar>
       12321
-      <Button type="danger" size="small">
-        主要按钮
-      </Button>
+      <AtButton
+        type="primary"
+        onClick={() => goTo('/packageA/pages/apple/index', { id: '123' })}
+      >
+        apple
+      </AtButton>
       <Text className="p-8 text-primary">000</Text>
       <View className="text-2xl text-center my-3">font-size</View>
       <View className="text-xs">text-xs</View>
@@ -38,6 +44,8 @@ export default function FontSize() {
       <View className="text-5xl">text-5xl</View>
       <View className="text-6xl">text-6xl</View>
       <View className="text-7xl">text-7xl</View>
+      <View className="text-8xl">text-8xl</View>
+      <View className="text-8xl">text-8xl</View>
       <View className="text-8xl">text-8xl</View>
     </View>
   );

@@ -1,11 +1,17 @@
-@import '@antmjs/vantui/lib/index.css';
-
 .weui-tabbar__item span {
   display: flex !important;
   justify-content: center !important;
 }
 
 /* 定义项目的全局样式 */
+/*  #ifdef weapp  */
 page {
   --primary-color: 255, 0, 0;
 }
+/*  #endif  */
+
+/*  #ifdef h5  */
+:root {
+  --primary-color: 255, 0, 0;
+}
+/*  #endif  */

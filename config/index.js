@@ -26,14 +26,22 @@ const config = {
     patterns: [],
     options: {},
   },
-  framework: 'react',
-  compiler: 'webpack5',
   cache: {
     enable: true, // Webpack 持久化缓存配置，建议开启。默认配置请参考：https://docs.taro.zone/docs/config-detail#cache
+  },
+  framework: 'react',
+  compiler: {
+    type: 'webpack5',
+    prebundle: {
+      exclude: ['taro-ui'],
+    },
   },
   mini: {
     webpackChain(chain) {
       miniChain(chain);
+    },
+    optimizeMainPackage: {
+      enable: true,
     },
     postcss: {
       pxtransform: {
@@ -65,7 +73,7 @@ const config = {
         chain.performance.maxEntrypointSize(1000000).maxAssetSize(512000);
       }
     },
-    esnextModules: [/@antmjs[\\/]vantui/],
+    esnextModules: ['taro-ui'],
     router: {
       mode: 'browser',
     },

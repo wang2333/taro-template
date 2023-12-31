@@ -1,5 +1,6 @@
 import { Button, View } from '@tarojs/components';
 
+import { AtButton } from 'taro-ui';
 import { useRouter } from '@/hooks';
 
 definePageConfig({
@@ -9,12 +10,12 @@ definePageConfig({
 export default function Index() {
   const { switchTab } = useRouter();
   const handleGo = () => {
-    switchTab({
-      url: '/pages/demo1/index',
-    });
+    switchTab('/pages/demo1/index');
   };
   return (
     <View>
+      <AtButton type="primary">123</AtButton>
+
       <Button plain type="primary" onClick={handleGo}>
         Go Home
       </Button>

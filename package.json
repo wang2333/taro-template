@@ -6,8 +6,10 @@
   "author": "",
   "scripts": {
     "build:h5": "taro build --type h5",
+    "build:rn": "taro build --type rn",
     "build:weapp": "taro build --type weapp",
     "dev:h5": "npm run build:h5 -- --watch",
+    "dev:rn": "npm run build:rn -- --watch",
     "dev:weapp": "npm run build:weapp -- --watch",
     "format": "prettier --cache --write .",
     "lint": "eslint --fix --ext .js,.jsx,.ts,.tsx"
@@ -19,8 +21,8 @@
   ],
   "dependencies": {
     "@antmjs/mini-fix": "^2.3.24",
-    "@antmjs/vantui": "^3.2.2",
     "@tarojs/components": "3.6.20",
+    "@tarojs/components-rn": "^3.6.22",
     "@tarojs/helper": "3.6.20",
     "@tarojs/plugin-framework-react": "3.6.20",
     "@tarojs/plugin-html": "^3.6.20",
@@ -34,15 +36,22 @@
     "@tarojs/plugin-platform-tt": "3.6.20",
     "@tarojs/plugin-platform-weapp": "3.6.20",
     "@tarojs/react": "3.6.20",
+    "@tarojs/rn-runner": "^3.6.22",
+    "@tarojs/rn-supporter": "^3.6.22",
     "@tarojs/router": "3.6.20",
     "@tarojs/runtime": "3.6.20",
+    "@tarojs/runtime-rn": "^3.6.22",
     "@tarojs/shared": "3.6.20",
     "@tarojs/taro": "3.6.20",
     "@tarojs/taro-h5": "3.6.20",
+    "@tarojs/taro-rn": "^3.6.22",
     "axios": "^1.6.2",
+    "expo": "~47.0.3",
     "lodash-es": "^4.17.21",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "react-native": "^0.70.5",
+    "taro-ui": "^3.2.0"
   },
   "devDependencies": {
     "@antmjs/plugin-global-fix": "^2.3.24",

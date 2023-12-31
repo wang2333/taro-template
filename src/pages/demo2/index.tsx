@@ -1,6 +1,5 @@
 import { useEffect } from 'react';
 import { Text, View } from '@tarojs/components';
-import { Button } from '@antmjs/vantui';
 
 import { useRouter } from '@/hooks';
 import { add } from '@/service/demo';
@@ -9,7 +8,7 @@ definePageConfig({
   navigationBarTitleText: 'demo2',
 });
 
-export default function FontSize() {
+export default function Demo2() {
   const { pageParams } = useRouter();
   console.log('👻 ~ pageParams:', pageParams);
   useEffect(() => {
@@ -20,9 +19,6 @@ export default function FontSize() {
   return (
     <View className="p-4">
       12321
-      <Button type="danger" size="small">
-        主要按钮
-      </Button>
       <Text className="p-8">000</Text>
       <View className="text-2xl text-center my-3">font-size</View>
       <View className="text-xs">text-xs</View>
