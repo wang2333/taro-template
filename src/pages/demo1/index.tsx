@@ -25,7 +25,7 @@ export default function FontSize() {
         主要按钮
       </Button>
       <Text className="p-8">000</Text>
-      <View className="  text-2xl text-center my-3">font-size</View>
+      <View className="text-2xl text-center my-3">font-size</View>
       <View className="text-xs">text-xs</View>
       <View className="text-sm">text-sm</View>
       <View className="text-base">text-base</View>

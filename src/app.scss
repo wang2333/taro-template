@@ -1,4 +1,4 @@
-@import '@antmjs/vantui/lib/index.css';
+@import url('@antmjs/vantui/lib/index.css');
 
 .weui-tabbar__item span {
   display: flex !important;
@@ -6,5 +6,10 @@
 }
 
 :root {
-  // --button-small-height: 20;
+  --button-small-height: 20;
+}
+
+.aa {
+  font-size: 100px;
+  color: red;
 }
